@@ -1,0 +1,244 @@
+@font-face {
+  font-family: 'BMDOHYEON';
+  src: url('../source/BMDOHYEON.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'BMDOHYEON', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #1a1a1a;
+}
+
+button, input, textarea, select {
+  font-family: 'BMDOHYEON';
+}
+
+.background {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: url('../source/site_image/seoul-twilight-wallpaper.jpg') center center / cover no-repeat;
+  filter: brightness(0.75) blur(2px); /* 어둡고 블러 처리 */
+  z-index: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.3); /* 추가 어둡게 */
+  z-index: 1;
+}
+
+header {
+  position: absolute;
+  top: 30px; left: 40px; right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.header-gradient {
+  position: absolute;
+  left: -10vw; right: -10vw;
+  bottom: -5vw; top: -5vw;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,0) 25%, rgba(0,0,0,255) 100%);
+}
+
+.logo {
+  width: 110px;
+  object-fit: cover;
+  display: flex;
+   position: relative;
+  z-index: 2;
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  display: flex;
+   position: relative;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-btn {
+  font-size: 1.25rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  transition: background 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-btn:hover {
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+}
+
+/* 게시판 디자인 */
+main {
+  display: flex;
+  top: 10%; left: 0; width: 100vw;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  z-index: 1;
+  position: relative;
+}
+.glass-board {
+  margin-top: 5%;
+  width: 80vw;
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: #fff;	
+  z-index: 1;
+  position: relative;
+}
+.glass-signin {
+  margin-top: 5%;
+  width: 450px;
+  height: 400px;
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: #fff;	
+  z-index: 1;
+  position: relative;
+}
+.glass-signup {
+  margin-top: 5%;
+  width: 450px;
+  height: 450px;
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: #fff;	
+  z-index: 1;
+  position: relative;
+}
+.glass-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: rgba(30, 30, 30, 0.25);
+  border: 1px solid rgba(255,255,255,0.33);
+  border-radius: 10px;
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.12);
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  margin-top: 8px;
+  transition: background 0.2s, border 0.2s, color 0.2s;
+}
+
+.glass-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* 게시판 테이블 스타일 */
+.board-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  background: transparent;
+  color: #fff;
+}
+.board-table th, .board-table td {
+  padding: 12px 8px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  background: transparent;
+}
+.board-table th {
+  background: rgba(255,255,255,0.18);
+  font-weight: bold;
+  color: #fff;
+}
+.board-table tr:last-child td {
+  border-bottom: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  resize: none; 
+  width: 100%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  border: 1.5px solid rgba(255,255,255,0.22);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  font-size: 1.05rem;
+  font-family: inherit;
+  outline: none;
+  transition: border 0.2s, background 0.2s;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-family: Verdana, Arial, sans-serif;
+}
+
+input:invalid,
+textarea:invalid {
+	border: 1.5px solid red;
+	background: rgba(255,255,255,0.28);
+}
+
+/*
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border: 1.5px solid #6ec1e4;
+  background: rgba(255,255,255,0.28);
+}
+*/
+
+input::placeholder,
+textarea::placeholder {
+  color: #e0e0e0;
+  opacity: 1;
+  font-size: 1rem;
+}
+
+/* 내부 테이블 정렬 개선 */
+.table2 td:first-child {
+  width: 65px;
+  text-align: center;
+  vertical-align: middle;
+  padding-right: 10px;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+.table2 td:last-child {
+  text-align: center;
+}

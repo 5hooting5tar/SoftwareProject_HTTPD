@@ -1,0 +1,204 @@
+/* 폰트, 배경 설정 */
+
+@font-face {
+  font-family: 'BMDOHYEON';
+  src: url('../source/BMDOHYEON.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'BMDOHYEON', sans-serif;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.background {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: url('../source/site_image/seoul-twilight-wallpaper.jpg') center center / cover no-repeat;
+  filter: brightness(0.75) blur(2px); /* 어둡고 블러 처리 */
+  z-index: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.3); /* 추가 어둡게 */
+  z-index: 1;
+}
+
+header {
+  position: absolute;
+  top: 30px; left: 40px; right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.header-gradient {
+  position: absolute;
+  left: -10vw; right: -10vw;
+  bottom: -5vw; top: -5vw;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,0) 25%, rgba(0,0,0,255) 100%);
+}
+
+.logo {
+  width: 110px;
+  object-fit: cover;
+  display: flex;
+   position: relative;
+  z-index: 2;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-btn {
+  font-size: 1.25rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  transition: background 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-btn:hover {
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+}
+
+/* main.html 사이트 설정*/
+
+main {
+  position: absolute;
+  top: 40%; left: 0; width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+  padding-left: 6vw;
+}
+
+.subtitle {
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  opacity: 0.85;
+}
+
+.title {
+  font-size: 5.5rem;
+  font-weight: bold;
+  margin-bottom: 36px;
+  line-height: 1;
+}
+
+.buttons {
+  display: flex;
+  gap: 24px;
+}
+
+.glass-btn {
+  display: inline-block;
+  padding: 18px 38px;
+  font-size: 1.4rem;
+  color: #fff;
+  background: rgba(30, 30, 30, 0.25);
+  border: 1px solid rgba(255,255,255,0.33);
+  border-radius: 10px;
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.12);
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  margin-top: 8px;
+  transition: background 0.2s, border 0.2s, color 0.2s;
+}
+
+.glass-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* about.html 사이트 설정*/
+.about-row {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  display: flex;
+  gap: 60px; /* 프로필 사진과 카드 사이 간격 */
+  align-items: center;
+  z-index: 2;
+}
+
+.profile-photo-wrap {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-container {
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 5vw;
+  margin-top: 40px;
+  z-index: 2;
+}
+
+.profile-card {
+  background: rgba(255,255,255,0.14);
+  border-radius: 18px;
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.13);
+  padding: 38px 48px;
+  color: #fff;
+  font-size: 1.25rem;
+  min-width: 320px;
+  backdrop-filter: blur(4px);
+  border: 1.5px solid rgba(255,255,255,0.15);
+}
+
+.profile-card h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 2.25rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.profile-card a {
+  color: #fff;
+  text-decoration: underline;
+  word-break: break-all;
+}
